@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cardápio | SENAI Coffee</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+   <header class="cabecalho">
+        <div class="navegacao">
+
+            <a href="/" class="logo">
+                <span class="logo-simbolo">☕</span>
+
+                <span class="logo-texto">
+                    <strong>SENAI <span>Coffee</span></strong>
+                    <small>Onde ideias se encontram.</small>
+                </span>
+            </a>
+
+            <nav class="menu">
+                <a href="./index.html" class="ativo">Início</a>
+                <a href="/cardapio">Cardápio</a>
+                <a href="/sobre">Sobre nós</a>
+                <a href="/pedidos">Meus pedidos</a>
+                <a href="/login" class="botao-entrar">Entrar</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="pagina-cardapio">
+
+        <section class="cardapio-intro">
+            <span class="etiqueta-cardapio">SENAI COFFEE</span>
+            <h1>Nosso <span>cardápio</span></h1>
+            <p>
+                Seu momento de pausa merece algo especial.
+                Escolha seus favoritos e monte seu pedido!
+            </p>
+        </section>
+
+        <nav class="categorias" aria-label="Categorias do cardápio">
+            <a href="#bebidas-quentes">Cafés</a>
+            <a href="#bebidas-geladas">Bebidas geladas</a>
+            <a href="#padaria">Padaria</a>
+            <a href="#salgados">Salgados</a>
+            <a href="#sobremesas">Sobremesas</a>
+            <a href="#opcoes-especiais">Opções especiais</a>
+        </nav>
+
+        <div class="aviso-desconto">
+            <span class="desconto-icone">%</span>
+            <p>
+                <strong>Benefício SENAI:</strong>
+                alunos e funcionários têm 10% de desconto.
+                Visitantes pagam o preço normal.
+            </p>
+        </div>
+
+        <!-- CAFÉS -->
+        <section class="grupo-produtos" id="bebidas-quentes">
+            <div class="titulo-categoria">
+                <div>
+                    <span class="subtitulo">PARA COMEÇAR BEM</span>
+                    <h2>Cafés e bebidas quentes</h2>
+                </div>
+                <span class="emoji-categoria">☕</span>
+            </div>
+
+            <div class="grade-produtos">
+                <article class="produto-card">
+                    <img src="/img/cafe-ninho.png" alt="Café de Ninho do SENAI Coffee" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Café expresso de Ninho</h3>
+                        <p>Café com leite em pó cremoso, combinando sabor e suavidade.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 9,00</span>
+                            <button class="adicionar" data-id="1" data-nome="Café expresso de Ninho"
+                                data-preco="9.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85"
+                        alt="Café latte" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Latte</h3>
+                        <p>Espresso com leite vaporizado e uma camada delicada de espuma.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 8,00</span>
+                            <button class="adicionar" data-id="2" data-nome="Latte" data-preco="8.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=700&q=85"
+                        alt="Café com leite" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Café com leite</h3>
+                        <p>A combinação clássica de café e leite para qualquer momento.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 6,00</span>
+                            <button class="adicionar" data-id="3" data-nome="Café com leite"
+                                data-preco="6.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BEBIDAS GELADAS -->
+        <section class="grupo-produtos" id="bebidas-geladas">
+            <div class="titulo-categoria">
+                <div>
+                    <span class="subtitulo">REFRESCÂNCIA A CADA GOLE</span>
+                    <h2>Bebidas geladas</h2>
+                </div>
+                <span class="emoji-categoria">🥤</span>
+            </div>
+
+            <div class="grade-produtos">
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-milkshake" role="img"
+                        aria-label="Ilustração provisória de milk-shake">🥤</div>
+                    <div class="produto-conteudo">
+                        <h3>Milk-shake</h3>
+                        <p>Bebida gelada e cremosa, perfeita para adoçar o dia.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 12,00</span>
+                            <button class="adicionar" data-id="4" data-nome="Milk-shake"
+                                data-preco="12.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-suco" role="img"
+                        aria-label="Ilustração provisória de suco natural">🍊</div>
+                    <div class="produto-conteudo">
+                        <h3>Sucos naturais</h3>
+                        <p>Opção refrescante para acompanhar seu lanche.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 7,00</span>
+                            <button class="adicionar" data-id="5" data-nome="Sucos naturais"
+                                data-preco="7.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-cha" role="img"
+                        aria-label="Ilustração provisória de chá gelado">🧋</div>
+                    <div class="produto-conteudo">
+                        <h3>Chás gelados</h3>
+                        <p>Uma bebida leve e geladinha para sua pausa.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 6,50</span>
+                            <button class="adicionar" data-id="6" data-nome="Chás gelados"
+                                data-preco="6.50">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PADARIA -->
+        <section class="grupo-produtos" id="padaria">
+            <div class="titulo-categoria">
+                <div>
+                    <span class="subtitulo">FEITOS PARA ACOMPANHAR SEU CAFÉ</span>
+                    <h2>Padaria</h2>
+                </div>
+                <span class="emoji-categoria">🥐</span>
+            </div>
+
+            <div class="grade-produtos">
+                <article class="produto-card">
+                    <img src="/img/croissant.png" alt="Croissant recheado" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Croissant</h3>
+                        <p>Massa folhada e douradinha, com recheio de queijo e presunto.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 10,00</span>
+                            <button class="adicionar" data-id="7" data-nome="Croissant"
+                                data-preco="10.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-folhado" role="img"
+                        aria-label="Ilustração provisória de folhado">🥐</div>
+                    <div class="produto-conteudo">
+                        <h3>Folhados</h3>
+                        <p>Massa leve e crocante, ideal para um lanche rápido.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 8,00</span>
+                            <button class="adicionar" data-id="8" data-nome="Folhados"
+                                data-preco="8.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-cookie" role="img"
+                        aria-label="Ilustração provisória de cookie">🍪</div>
+                    <div class="produto-conteudo">
+                        <h3>Cookies</h3>
+                        <p>Biscoitos doces para acompanhar sua bebida favorita.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 5,00</span>
+                            <button class="adicionar" data-id="9" data-nome="Cookies"
+                                data-preco="5.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SALGADOS -->
+        <section class="grupo-produtos" id="salgados">
+            <div class="titulo-categoria">
+                <div>
+                    <span class="subtitulo">UMA PAUSA MAIS SABOROSA</span>
+                    <h2>Salgados</h2>
+                </div>
+                <span class="emoji-categoria">🥟</span>
+            </div>
+
+            <div class="grade-produtos">
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-empada" role="img"
+                        aria-label="Ilustração provisória de empada">🥧</div>
+                    <div class="produto-conteudo">
+                        <h3>Empadas</h3>
+                        <p>Massinha delicada com recheio saboroso.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 7,00</span>
+                            <button class="adicionar" data-id="10" data-nome="Empadas"
+                                data-preco="7.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-esfiha" role="img"
+                        aria-label="Ilustração provisória de esfiha">🥙</div>
+                    <div class="produto-conteudo">
+                        <h3>Esfihas</h3>
+                        <p>Massa macia com recheio temperado.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 7,00</span>
+                            <button class="adicionar" data-id="11" data-nome="Esfihas"
+                                data-preco="7.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-assado" role="img"
+                        aria-label="Ilustração provisória de salgado assado">🥐</div>
+                    <div class="produto-conteudo">
+                        <h3>Salgados assados</h3>
+                        <p>Opções assadas para deixar seu intervalo mais gostoso.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 8,00</span>
+                            <button class="adicionar" data-id="12" data-nome="Salgados assados"
+                                data-preco="8.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SOBREMESAS -->
+        <section class="grupo-produtos" id="sobremesas">
+            <div class="titulo-categoria">
+                <div>
+                    <span class="subtitulo">UM DOCINHO SEMPRE CAI BEM</span>
+                    <h2>Sobremesas</h2>
+                </div>
+                <span class="emoji-categoria">🍰</span>
+            </div>
+
+            <div class="grade-produtos">
+                <article class="produto-card">
+                    <img src="/img/macarrons.png" alt="Macarons coloridos" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Macarons</h3>
+                        <p>Docinhos delicados, coloridos e com recheio cremoso.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 6,00</span>
+                            <button class="adicionar" data-id="13" data-nome="Macarons"
+                                data-preco="6.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <img src="/img/brownie.png" alt="Brownie de chocolate" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Palha italiana</h3>
+                        <p>Doce cremoso de chocolate com pedacinhos crocantes de biscoito.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 5,00</span>
+                            <button class="adicionar" data-id="14" data-nome="Palha italiana"
+                                data-preco="5.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <img src="/img/bolo.png" alt="Fatia de bolo com recheio de chocolate" class="produto-imagem">
+                    <div class="produto-conteudo">
+                        <h3>Tiramisù</h3>
+                        <p>Sobremesa inspirada no clássico italiano, com café e creme suave.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 12,00</span>
+                            <button class="adicionar" data-id="15" data-nome="Tiramisù"
+                                data-preco="12.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p class="nota-imagens">
+                Algumas fotos são provisórias e serão substituídas pelas imagens
+                específicas de cada produto quando estiverem disponíveis.
+            </p>
+        </section>
+
+        <!-- OPÇÕES ESPECIAIS -->
+        <section class="grupo-produtos" id="opcoes-especiais">
+            <div class="titulo-categoria">
+                <div>
+                    <span class="subtitulo">ESCOLHAS PARA DIFERENTES MOMENTOS</span>
+                    <h2>Opções especiais</h2>
+                </div>
+                <span class="emoji-categoria">🍓</span>
+            </div>
+
+            <div class="grade-produtos">
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-frutas" role="img"
+                        aria-label="Ilustração provisória de salada de frutas">🍓</div>
+                    <div class="produto-conteudo">
+                        <h3>Salada de frutas</h3>
+                        <p>Frutas variadas para uma pausa fresca e colorida.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 9,00</span>
+                            <button class="adicionar" data-id="16" data-nome="Salada de frutas"
+                                data-preco="9.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-acai" role="img" aria-label="Ilustração provisória de açaí">🫐
+                    </div>
+                    <div class="produto-conteudo">
+                        <h3>Açaí</h3>
+                        <p>Açaí gelado para refrescar seu intervalo.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">R$ 12,00</span>
+                            <button class="adicionar" data-id="17" data-nome="Açaí"
+                                data-preco="12.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="imagem-provisoria imagem-lactose" role="img"
+                        aria-label="Ilustração provisória de bebida sem lactose">🥛</div>
+                    <div class="produto-conteudo">
+                        <h3>Produtos sem lactose</h3>
+                        <p>Consulte as opções disponíveis sem lactose.</p>
+                        <div class="produto-rodape">
+                            <span class="preco">A partir de R$ 7,00</span>
+                            <button class="adicionar" data-id="18" data-nome="Produtos sem lactose"
+                                data-preco="7.00">Adicionar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FINALIZAÇÃO DO PEDIDO -->
+        <section class="area-pedido" id="meu-pedido">
+            <div class="pedido-titulo">
+                <div>
+                    <span class="subtitulo">SEU MOMENTO SENAI COFFEE</span>
+                    <h2>Seu pedido</h2>
+                </div>
+                <span class="contador" id="contador-itens">0 itens</span>
+            </div>
+
+            <div id="lista-pedido" class="lista-pedido">
+                <p class="pedido-vazio">Você ainda não adicionou produtos.</p>
+            </div>
+
+            <div class="pedido-total">
+                <span>Total estimado</span>
+                <strong id="valor-total">R$ 0,00</strong>
+            </div>
+
+            <div class="formulario-pedido">
+                <h3>Como deseja receber?</h3>
+
+                <label for="tipo-atendimento">Forma de atendimento</label>
+                <select id="tipo-atendimento">
+                    <option value="">Selecione uma opção</option>
+                    <option value="Balcão">Retirar no balcão</option>
+                    <option value="Mesa">Consumir em uma mesa</option>
+                    <option value="Delivery">Delivery</option>
+                </select>
+
+                <div id="campo-mesa" class="campo-condicional" hidden>
+                    <label for="numero-mesa">Escolha sua mesa</label>
+                    <select id="numero-mesa">
+                        <option value="">Selecione a mesa</option>
+                        <option value="1">Mesa 1</option>
+                        <option value="2">Mesa 2</option>
+                        <option value="3">Mesa 3</option>
+                        <option value="4">Mesa 4</option>
+                        <option value="5">Mesa 5</option>
+                        <option value="6">Mesa 6</option>
+                        <option value="7">Mesa 7</option>
+                        <option value="8">Mesa 8</option>
+                        <option value="9">Mesa 9</option>
+                        <option value="10">Mesa 10</option>
+                        <option value="11">Mesa 11</option>
+                        <option value="12">Mesa 12</option>
+                        <option value="13">Mesa 13</option>
+                        <option value="14">Mesa 14</option>
+                        <option value="15">Mesa 15</option>
+                    </select>
+                </div>
+
+                <div id="campo-endereco" class="campo-condicional" hidden>
+                    <label for="endereco-delivery">Endereço para entrega</label>
+                    <textarea id="endereco-delivery" rows="3"
+                        placeholder="Rua, número, bairro e complemento"></textarea>
+                </div>
+
+                <label for="perfil-cliente">Você é:</label>
+                <select id="perfil-cliente">
+                    <option value="visitante">Visitante — preço normal</option>
+                    <option value="senai">Aluno ou funcionário — 10% de desconto</option>
+                </select>
+
+                <p class="aviso-login">
+                    Para enviar seu pedido, será necessário entrar na sua conta.
+                </p>
+
+                <button type="button" id="finalizar-pedido" class="botao-finalizar">
+                    Entrar para continuar
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>© 2026 SENAI Coffee — Um café com propósito.</p>
+    </footer>
+
+    <script>
+        const pedido = [];
+
+        const listaPedido = document.getElementById("lista-pedido");
+        const valorTotal = document.getElementById("valor-total");
+        const contadorItens = document.getElementById("contador-itens");
+        const perfilCliente = document.getElementById("perfil-cliente");
+        const tipoAtendimento = document.getElementById("tipo-atendimento");
+        const campoMesa = document.getElementById("campo-mesa");
+        const campoEndereco = document.getElementById("campo-endereco");
+
+        const moeda = valor => valor.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+
+        document.querySelectorAll(".adicionar").forEach(botao => {
+            botao.addEventListener("click", () => {
+                const id = botao.dataset.id;
+                const produtoExistente = pedido.find(item => item.id === id);
+
+                if (produtoExistente) {
+                    produtoExistente.quantidade++;
+                } else {
+                    pedido.push({
+                        id: id,
+                        nome: botao.dataset.nome,
+                        preco: Number(botao.dataset.preco),
+                        quantidade: 1
+                    });
+                }
+
+                atualizarPedido();
+                document.getElementById("meu-pedido").scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+            });
+        });
+
+        function atualizarPedido() {
+            listaPedido.innerHTML = "";
+
+            if (pedido.length === 0) {
+                listaPedido.innerHTML =
+                    '<p class="pedido-vazio">Você ainda não adicionou produtos.</p>';
+            }
+
+            pedido.forEach(item => {
+                const linha = document.createElement("div");
+                linha.className = "linha-pedido";
+
+                const nome = document.createElement("span");
+                nome.textContent = `${item.quantidade}x ${item.nome}`;
+
+                const preco = document.createElement("strong");
+                preco.textContent = moeda(item.preco * item.quantidade);
+
+                const remover = document.createElement("button");
+                remover.type = "button";
+                remover.className = "remover-item";
+                remover.textContent = "−";
+                remover.setAttribute("aria-label", `Remover uma unidade de ${item.nome}`);
+
+                remover.addEventListener("click", () => {
+                    item.quantidade--;
+
+                    if (item.quantidade <= 0) {
+                        const indice = pedido.findIndex(produto => produto.id === item.id);
+                        pedido.splice(indice, 1);
+                    }
+
+                    atualizarPedido();
+                });
+
+                linha.append(nome, preco, remover);
+                listaPedido.appendChild(linha);
+            });
+
+            const totalBruto = pedido.reduce(
+                (soma, item) => soma + item.preco * item.quantidade, 0
+            );
+
+            const total = perfilCliente.value === "senai"
+                ? totalBruto * 0.90
+                : totalBruto;
+
+            valorTotal.textContent = moeda(total);
+            contadorItens.textContent =
+                `${pedido.reduce((soma, item) => soma + item.quantidade, 0)} itens`;
+
+            if (perfilCliente.value === "senai" && totalBruto > 0) {
+                valorTotal.title = "Desconto de 10% aplicado como simulação.";
+            } else {
+                valorTotal.title = "";
+            }
+        }
+
+        perfilCliente.addEventListener("change", atualizarPedido);
+
+        tipoAtendimento.addEventListener("change", () => {
+            campoMesa.hidden = tipoAtendimento.value !== "Mesa";
+            campoEndereco.hidden = tipoAtendimento.value !== "Delivery";
+        });
+
+        document.getElementById("finalizar-pedido").addEventListener("click", () => {
+            if (pedido.length === 0) {
+                alert("Adicione pelo menos um produto ao pedido.");
+                return;
+            }
+
+            if (!tipoAtendimento.value) {
+                alert("Selecione como deseja receber seu pedido.");
+                tipoAtendimento.focus();
+                return;
+            }
+
+            if (tipoAtendimento.value === "Mesa" &&
+                !document.getElementById("numero-mesa").value) {
+                alert("Selecione o número da mesa.");
+                return;
+            }
+
+            if (tipoAtendimento.value === "Delivery" &&
+                !document.getElementById("endereco-delivery").value.trim()) {
+                alert("Informe o endereço para entrega.");
+                return;
+            }
+
+            /*
+             * Esta página ainda não envia pedidos ao banco de dados.
+             * A próxima etapa será integrar o formulário com Spring Boot,
+             * autenticação e MySQL.
+             */
+            window.location.href = "/login";
+        });
+
+        atualizarPedido();
+    </script>
+
+</body>
+
+</html>
